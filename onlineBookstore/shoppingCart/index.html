@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+
+<body>
+    <div class="navigation">
+        <div class="title">Shopping Cart</div>
+        <div class="shoppingCart">
+            <span>Cart: </span>
+            <span id="itemCount">0</span>
+        </div>
+    </div>
+
+    <div class="productList">
+        <div class="productListItem">
+            <img src="img/51_R-_P_9es3_L._SX331_BO1_204_203_200.jpg" alt="India after Gandhi" class="listImage">
+           <div class="productTitle">India after Gandhi by Ramachandra Guha</div>
+           <div class="productDescription">
+             A history of the Indian nation after it gained independence from the British Empire
+            on 15 August 1947, India after Gandhi was chosen Book of the Year by The Economist, The Wall Street Journal and Outlook,
+            among others.</div>
+        <h2 class="productPrice">Kr. 300</h2>
+        <button type="button" name="button">Add to Cart</button>
+        </div>
+        
+    </div>
+
+    <script src="js/jsonLoader.js" charset="utf-8"></script>
+    <script src="js/shoppingCart.js" charset="utf-8"></script>
+    <script>
+        
+
+        var shoppingCart = new ShoppingCart();
+        // Build a new shopping cart with a product list
+
+       
+
+
+        shoppingCart.getProductList('json/productList.json');
+        shoppingCart.getCartItems();
+    </script>
+    
+</body>
+
+</html>
