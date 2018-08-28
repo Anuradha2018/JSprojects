@@ -1,6 +1,8 @@
 function populate() {
   if(quiz.isEnded()) {
       showScores();
+      
+
   }
   else {
       // show question
@@ -24,6 +26,7 @@ function guess(id, guess) {
   button.onclick = function() {
       quiz.guess(guess);
       populate();
+      
   }
 };
 
@@ -39,6 +42,7 @@ function showScores() {
   gameOverHTML += "<h2 id='score'> Your scores: " + quiz.score + "</h2>";
   var element = document.getElementById("quiz");
   element.innerHTML = gameOverHTML;
+
 };
 
 // create questions
