@@ -6,15 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TODO LIST APP With JavaScript</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href ="css/reset.css">
     <link rel="stylesheet" type="text/css" href ="css/style.css">
 </head>
 <body>
-    <header>
-        <input type="text" name="Enter a task" placeholder="Enter a Task" id="item">
-        <button id ="add"><img src ="./assets/add.png"></button><!--CREDIT:image from flaticon-->
-    </header>
+    <div class="container">
+            <header>
+                    <input type="text" name="Enter a task" placeholder="Enter a Task" id="item">
+                    <button id ="add"><img src ="./assets/add.png"></button><!--CREDIT:image from flaticon-->
+              </header>
+    </div>
+    <div class="container">
+			<!-- Uncompleted tasks -->
+			<ul class="todo" id="todo"></ul>
+
+			<!-- Completed tasks -->
+			<ul class="todo" id="completed"></ul>
+		</div>
+   
+    
+    
 <script src ="./js/main.js"></script>
 </body>
 </html>
