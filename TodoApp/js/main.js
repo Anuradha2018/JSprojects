@@ -1,5 +1,8 @@
-function buttonClicked() {
-    console.log('Button Clicked');
-}
 
-document.getElementById('add').addEventListener('click', buttonClicked);
+
+document.getElementById('add').addEventListener('click', function() {
+    var value = document.getElementById('item').value;
+    if(value) {
+        
+    }
+});
