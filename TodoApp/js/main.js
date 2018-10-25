@@ -6,8 +6,14 @@ document.getElementById('add').addEventListener('click', function() {
     let value = document.getElementById("item").value;
     if(value) { 
         addItemTodo(value);
+        document.getElementById('item').value='';
     }
 });
+function removeItem() {
+    let item = this.parentNode.parentNode;
+    let parent =  item.parentNode;
+    parent.removeChild(item);
+}
 
 function addItemTodo(text) {
     let list = document.getElementById('complete');
@@ -23,14 +29,18 @@ function addItemTodo(text) {
     let remove = document.createElement('button');
     remove.classList.add('remove');
     remove.innerHTML = removeIcon;
+    //removing item
+    remove.addEventListener('click', removeItem);
 
     let complete = document.createElement('button');
     complete.classList.add('complete')
     complete.innerHTML = completeIcon;
+    //adding item
+
     list.appendChild(item);
     buttons.appendChild(remove);
     buttons.appendChild(complete);
     item.appendChild(buttons);
-
+    list.insertBefore(item, list.childNodes[0]);
     
 }
