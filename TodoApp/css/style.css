@@ -160,12 +160,28 @@ ul.todo li .buttons button:last-of-type:before {
 
 }
 ul.todo#completed li .buttons button.complete i {
-  background: #25b99a;
-  border: 0px;
+  color:green;
+  
 }
 
-ul.todo:not(#completed) li .buttons button.complete:hover i {
-  background: rgba(37, 185, 154, 0.75);
+ul.todo:not(#completed) li .buttons button.complete i {
+ color:red;
+  
+
+}
+ul.todo#completed:not(:empty) {
+  position:relative;
+  padding: 60px 0 0 0;
+}
+ul.todo#completed:not(:empty):before {
+  content:'';
+  width:150px;
+  height:1px;
+  background:#d8e5e0;
+  position:absolute;
+  top:30px;
+  left:50%;
+  margin: 0 0 0 -75px;
 }
 
 /*ul.todo li .buttons button i .far fa-trash-alt{

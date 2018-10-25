@@ -1,6 +1,7 @@
 
 let removeIcon='<i style="color:red" class="far fa-trash-alt"></i>';
 let completeIcon='<i style="color:green" class="far fa-check-circle"></i>';
+let completedIcon='<i style="color:green" class="fas fa-check-circle"></i>';
 
 document.getElementById('add').addEventListener('click', function() {
     let value = document.getElementById("item").value;
@@ -15,8 +16,23 @@ function removeItem() {
     parent.removeChild(item);
 }
 
+function completeItem() {
+    let itemOne = this.parentNode.parentNode;
+    let parent = itemOne.parentNode;
+    let id = parent.id;
+    //Check if item is completed
+    /*let target;
+    if(id ==='')*/
+    let target = (id ==='completed') ? document.getElementById('completed') :document.getElementById('complete');
+    //buttons.appendChild(completed);
+    //parent.removeChild(itemOne);
+    target.insertBefore(itemOne, target.childNodes[0]);
+    
+
+}
+
 function addItemTodo(text) {
-    let list = document.getElementById('complete');
+    let list = document.getElementById('todo');
 
     let item = document.createElement('li');
     item.innerText = text;
@@ -33,13 +49,22 @@ function addItemTodo(text) {
     remove.addEventListener('click', removeItem);
 
     let complete = document.createElement('button');
-    complete.classList.add('complete')
+    complete.classList.add('complete');
     complete.innerHTML = completeIcon;
     //for tasks being completed
+    complete.addEventListener('click', completeItem);
+
+    let completed = document.createElement('button');
+    complete.classList.add('completed');
+    completed.innerHTML =completedIcon;
+
 
     list.appendChild(item);
     buttons.appendChild(remove);
     buttons.appendChild(complete);
+
+   
+
     item.appendChild(buttons);
     list.insertBefore(item, list.childNodes[0]);
     
