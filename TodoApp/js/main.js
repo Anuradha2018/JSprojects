@@ -35,7 +35,7 @@ function addItemTodo(text) {
     let complete = document.createElement('button');
     complete.classList.add('complete')
     complete.innerHTML = completeIcon;
-    //adding item
+    //for tasks being completed
 
     list.appendChild(item);
     buttons.appendChild(remove);
