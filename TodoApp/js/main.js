@@ -11,9 +11,9 @@ document.getElementById('add').addEventListener('click', function() {
     }
 });
 function removeItem() {
-    let item = this.parentNode.parentNode;
-    let parent =  item.parentNode;
-    parent.removeChild(item);
+     let item = this.parentNode.parentNode;
+     let parent =  item.parentNode;
+     parent.removeChild(item);
 }
 
 function completeItem() {
@@ -22,10 +22,10 @@ function completeItem() {
     let id = parent.id;
     //Check if item is completed
     
-    let target = (id ==='completed') ? document.getElementById('completed') :document.getElementById('complete');
-    //buttons.appendChild(completed);
+    let target = (id ==='todo') ? document.getElementById('completed') :document.getElementById('complete');
     parent.removeChild(item);
     target.insertBefore(item, target.childNodes[0]);
+    
     
 
 }
@@ -61,9 +61,6 @@ function addItemTodo(text) {
     list.appendChild(item);
     buttons.appendChild(remove);
     buttons.appendChild(complete);
-
-   
-
     item.appendChild(buttons);
     list.insertBefore(item, list.childNodes[0]);
     
