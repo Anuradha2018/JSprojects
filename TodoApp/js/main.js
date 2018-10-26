@@ -1,4 +1,9 @@
 
+let data = {
+    todo: [],
+    completed: []
+};
+
 let removeIcon='<i style="color:red" class="far fa-trash-alt"></i>';
 let completeIcon='<i style="color:green" class="far fa-check-circle"></i>';
 let completedIcon='<i style="color:green" class="fas fa-check-circle"></i>';
@@ -6,8 +11,11 @@ let completedIcon='<i style="color:green" class="fas fa-check-circle"></i>';
 document.getElementById('add').addEventListener('click', function() {
     let value = document.getElementById("item").value;
     if(value) { 
+        // data.todo.push(value);
         addItemTodo(value);
         document.getElementById('item').value='';
+        data.todo.push(value);
+        console.log(data);
     }
 });
 function removeItem() {
@@ -25,9 +33,6 @@ function completeItem() {
     let target = (id ==='todo') ? document.getElementById('completed') :document.getElementById('complete');
     parent.removeChild(item);
     target.insertBefore(item, target.childNodes[0]);
-    
-    
-
 }
 
 function addItemTodo(text) {
