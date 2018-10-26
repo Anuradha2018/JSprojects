@@ -17,16 +17,15 @@ function removeItem() {
 }
 
 function completeItem() {
-    let itemOne = this.parentNode.parentNode;
-    let parent = itemOne.parentNode;
+    let item = this.parentNode.parentNode;
+    let parent = item.parentNode;
     let id = parent.id;
     //Check if item is completed
-    /*let target;
-    if(id ==='')*/
+    
     let target = (id ==='completed') ? document.getElementById('completed') :document.getElementById('complete');
     //buttons.appendChild(completed);
-    //parent.removeChild(itemOne);
-    target.insertBefore(itemOne, target.childNodes[0]);
+    parent.removeChild(item);
+    target.insertBefore(item, target.childNodes[0]);
     
 
 }
