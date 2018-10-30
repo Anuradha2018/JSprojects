@@ -37,9 +37,7 @@ $(document).ready(() => {
   }
   function getMovie() {
       let movieId= sessionStorage.getItem ('movieId');
-
-      function getMovies(searchText){
-        axios.get('http://www.omdbapi.com/?apikey=39bea9fe&i='+smovieId)
+        axios.get('http://www.omdbapi.com/?apikey=39bea9fe&i='+movieId)
           .then((response) => {
             console.log(response);
             let movie = response.data;
@@ -62,8 +60,16 @@ $(document).ready(() => {
                     </ul>
                 </div>
                 </div>
-
-            `;
+                <div class="row">
+                    <div class="well">
+                        <h3>Plot</h3>
+                        ${movie.Plot}
+                        <hr>
+                        <a href="http://www.omdbapi.com/?apikey=39bea9fe/title/${movie.imdbID}" target="_blank" class="btn btn-primary>View IMDB</a>
+                        <a href="index.html" class="btn btn-default">Go Back To Search</a>
+                    </div>
+                </div>
+                `;
             $('#movie').html(output);
           })
           .catch((err) => {
