@@ -66,7 +66,7 @@ $(document).ready(() => {
                         ${movie.Plot}
                         <hr>
                         <a href="http://www.omdbapi.com/?apikey=39bea9fe/title/${movie.imdbID}" target="_blank" class="btn btn-primary>View IMDB</a>
-                        <a href="index.html" class="btn btn-default">Go Back To Search</a>
+                        <a href="https://anuradha2018.github.io/JSprojects/movieFinderApp/index.html" class="btn btn-default">Go Back To Search</a>
                     </div>
                 </div>
                 `;
