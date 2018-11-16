@@ -1,7 +1,5 @@
 body {
-  background-image: url('https://s19.postimg.cc/ht6z67fkz/images.jpg');
-  background-repeat:no-repeat;
-  background-size: cover; 
+  background-color: #001a00;
 }
 
 .grid {
